@@ -1,0 +1,29 @@
+{
+  "name": "muparse",
+  "version": "0.0.0",
+  "description": "Micro parsing tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dfcreative/muparse.git"
+  },
+  "keywords": [
+    "parse",
+    "types",
+    "stringify",
+    "deserialization",
+    "serialization"
+  ],
+  "author": "dfcreative",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dfcreative/muparse/issues"
+  },
+  "homepage": "https://github.com/dfcreative/muparse",
+  "dependencies": {
+    "mutypes": "0.0.1"
+  }
+}
