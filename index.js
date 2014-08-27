@@ -40,7 +40,7 @@ var parse = module.exports = {
 			return true;
 		} else if (/false/i.test(str)) {
 			return false;
-		} else if (!/[^\d\.\-]/.test(str) && !isNaN(v = parse.float(str))) {
+		} else if (!/[^\d\.\-]/.test(str) && !isNaN(v = parseFloat(str))) {
 			return v;
 		} else if (/\{/.test(str)){
 			try {
@@ -59,7 +59,7 @@ var parse = module.exports = {
 		if (isArray(type)) {
 			res = parse.array(value);
 		} else if (isNumber(type)) {
-			res = parse.float(value)
+			res = parseFloat(value)
 		} else if (isBool(type)){
 			res = !/^(false|off|0)$/.test(value);
 		} else if (isFn(type)){
