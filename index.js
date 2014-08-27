@@ -1,4 +1,5 @@
 var types = require('mutypes');
+var str = require('mustring');
 
 var parse = module.exports = {
 	//parse attribute from the target
@@ -8,7 +9,7 @@ var parse = module.exports = {
 		//parse attr value
 		if (!has(target, name)) {
 			if (has(target, 'attributes')) {
-				var dashedPropName = toDashedCase(name);
+				var dashedPropName = str.dashed(name);
 
 				var attr = target.attributes[name] || target.attributes['data-' + name] || target.attributes[dashedPropName] || target.attributes['data-' + dashedPropName];
 
