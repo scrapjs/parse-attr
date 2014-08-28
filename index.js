@@ -1,5 +1,13 @@
-var types = require('mutypes');
+var type = require('mutypes');
 var str = require('mustring');
+var eachCSV = require('each-csv');
+
+var has = type['has'];
+var isArray = type['isArray'];
+var isString = type['isString'];
+var isElement = type['isElement'];
+var isObject = type['isObject'];
+var dashed = str['dashed'];
 
 var parse = module.exports = {
 	//parse attribute from the target
@@ -57,7 +65,7 @@ var parse = module.exports = {
 		var res;
 		// console.log('parse typed', value, type)
 		if (isArray(type)) {
-			res = parse.array(value);
+			res = parse.list(value);
 		} else if (isNumber(type)) {
 			res = parseFloat(value)
 		} else if (isBool(type)){
@@ -86,7 +94,7 @@ var parse = module.exports = {
 	},
 
 	//returns array parsed from string
-	array: function(str){
+	list: function(str){
 		if (!isString(str)) return [parse.value(str)]
 
 		//clean str from spaces/array rudiments

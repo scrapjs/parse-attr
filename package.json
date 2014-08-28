@@ -24,7 +24,10 @@
   },
   "homepage": "https://github.com/dfcreative/muparse",
   "dependencies": {
-    "mutypes": "0.0.1",
-    "mustring": "0.0.0"
+    "mutypes": "*",
+    "mustring": "*",
+    "mocha": "~1.21.4",
+    "chai": "~1.9.1",
+    "each-csv": "*"
   }
 }
