@@ -5,8 +5,11 @@ var eachCSV = require('each-csv');
 var has = type['has'];
 var isArray = type['isArray'];
 var isString = type['isString'];
+var isFn = type['isFn'];
 var isElement = type['isElement'];
+var isNumber = type['isNumber'];
 var isObject = type['isObject'];
+var isBool = type['isBool'];
 var dashed = str['dashed'];
 
 var parse = module.exports = {
@@ -30,7 +33,7 @@ var parse = module.exports = {
 
 					//detect based on type
 					else {
-						target[name] = parse.typed(attr.value, getType(example));
+						target[name] = parse.typed(attr.value, example);
 					}
 				}
 			}
