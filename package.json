@@ -1,6 +1,6 @@
 {
   "name": "muparse",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Micro parsing tools",
   "main": "index.js",
   "scripts": {
