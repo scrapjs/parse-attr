@@ -31,10 +31,10 @@ function parseAttr(target, name, example){
 			var dashedPropName = str.dashed(name);
 
 			var attrs = target.attributes,
-				attr = attrs[name] || attrs['data-' + name] || attrs[dashedPropName] || attrs['data-' + dashedPropName],
-				attrVal = attr.value;
+				attr = attrs[name] || attrs['data-' + name] || attrs[dashedPropName] || attrs['data-' + dashedPropName];
 
 			if (attr) {
+				var attrVal = attr.value;
 				// console.log('parseAttr', name, propType)
 				//fn on-attribute
 				// if (/^on/.test(name)) {
