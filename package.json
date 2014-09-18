@@ -26,11 +26,11 @@
   "dependencies": {
     "mutypes": "*",
     "mustring": "*",
-    "mocha": "~1.21.4",
-    "chai": "~1.9.1",
     "each-csv": "*"
   },
   "devDependencies": {
-    "require-stub": "0.0.16"
+    "require-stub": "0.0.16",
+    "mocha": "~1.21.4",
+    "chai": "~1.9.1"
   }
 }
