@@ -1,5 +1,4 @@
-var type = require('mutypes');
-var str = require('mustring');
+var type = require('mutype');
 var eachCSV = require('each-csv');
 
 var has = type.has;
@@ -10,7 +9,7 @@ var isElement = type.isElement;
 var isNumber = type.isNumber;
 var isObject = type.isObject;
 var isBool = type.isBool;
-var dashed = str.dashed;
+var dashed = require('mustring/dashed');
 
 module.exports = {
 	value: parseValue,
@@ -28,23 +27,14 @@ function parseAttr(target, name, example){
 	//parse attr value
 	if (!has(target, name)) {
 		if (has(target, 'attributes')) {
-			var dashedPropName = str.dashed(name);
+			var dashedPropName = dashed(name);
 
 			var attrs = target.attributes,
 				attr = attrs[name] || attrs['data-' + name] || attrs[dashedPropName] || attrs['data-' + dashedPropName];
 
 			if (attr) {
 				var attrVal = attr.value;
-				// console.log('parseAttr', name, propType)
-				//fn on-attribute
-				// if (/^on/.test(name)) {
-				// 	target[name] = new Function(attrVal);
-				// }
-
-				//detect based on type
-				// else {
-					target[name] = parseTyped(attrVal, example);
-				// }
+				target[name] = parseTyped(attrVal, example);
 			}
 		}
 	}
