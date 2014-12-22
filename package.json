@@ -1,7 +1,7 @@
 {
-  "name": "muparse",
+  "name": "parse-attr",
   "version": "0.0.10",
-  "description": "Micro parsing tools",
+  "description": "Parse or serialize HTML Element attribute",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/dfcreative/muparse.git"
+    "url": "git://github.com/dfcreative/parse-attr.git"
   },
   "keywords": [
     "parse",
@@ -23,9 +23,9 @@
   "author": "dfcreative",
   "license": "unlicense",
   "bugs": {
-    "url": "https://github.com/dfcreative/muparse/issues"
+    "url": "https://github.com/dfcreative/parse-attr/issues"
   },
-  "homepage": "https://github.com/dfcreative/muparse",
+  "homepage": "https://github.com/dfcreative/parse-attr",
   "dependencies": {
     "mutype": "*",
     "mustring": "*",

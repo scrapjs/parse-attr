@@ -1,22 +1,22 @@
-var parse = require('../index');
+var parse = require('..');
 var assert = require('chai').assert;
 
 describe('Parsing', function(){
 	it('value', function(){
-		parse.value('123');
-		parse.value('true');
+		assert.equal(parse.value('123'), 123);
+		assert.equal(parse.value('true'), true);
 	})
 	it('attribute', function(){
-		parse.attribute({})
+		parse.attribute({});
 	})
 	it('object', function(){
-		parse.object('{1:1}');
+		assert.deepEqual(parse.object('{"1":1}'), {1:1});
 	})
 	it('list', function(){
-		parse.list('1,2,4');
+		assert.deepEqual(parse.list('1,2,4'), [1,2,4]);
 	})
 	it('stringify', function(){
-		parse.stringify({a:1});
-		parse.stringify([1,2,43]);
+		assert.equal(parse.stringify({a:1}), '{"a":1}');
+		assert.equal(parse.stringify([1,2,43]), '1,2,43');
 	})
 })
