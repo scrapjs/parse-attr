@@ -1,6 +1,6 @@
 {
   "name": "parse-attr",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "description": "Parse or serialize HTML Element attribute",
   "main": "index.js",
   "scripts": {
