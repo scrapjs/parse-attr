@@ -26,7 +26,7 @@ parseAttr.list = parseList;
 
 
 //parse attribute from the target
-function parseAttr(target, name, defValue){
+function parseAttr(target, name, exampleValue){
 	var result;
 
 	//parse attr value
@@ -38,13 +38,10 @@ function parseAttr(target, name, defValue){
 
 		if (attr) {
 			var attrVal = attr.value;
-			result = parseTyped(attrVal, defValue);
+			result = parseTyped(attrVal, exampleValue);
 			return result;
 		}
 	}
-
-	//if no attr found - return return default value
-	return defValue;
 }
 
 //returns value from string with correct type except for array
