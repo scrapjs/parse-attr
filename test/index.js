@@ -20,7 +20,9 @@ describe('Parsing', function(){
 		assert.deepEqual(parse.object('{"1":1}'), {1:1});
 	});
 	it('list', function(){
+		assert.deepEqual(parse.list('[]'), []);
 		assert.deepEqual(parse.list('1,2,4'), [1,2,4]);
+		assert.deepEqual(parse.list('\'[]\''), ['\'[]\'']);
 	});
 	it('stringify', function(){
 		assert.equal(parse.stringify({a:1}), '{"a":1}');

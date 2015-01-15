@@ -61,9 +61,9 @@ function parseValue(str){
 		return NaN;
 	} else if (!/[^\d\.\-]/.test(str) && !isNaN(v = parseFloat(str))) {
 		return v;
-	} else if (/\[/.test(str)) {
+	} else if (/^\[/.test(str) && /\]$/.test(str)) {
 		return parseList(str);
-	} else if (/\{/.test(str)){
+	} else if (/^\{/.test(str) && /\}$/.test(str)){
 		try {
 			return JSON.parse(str);
 		} catch (e) {
@@ -112,10 +112,11 @@ function parseList(str){
 
 	//clean str from spaces/array rudiments
 	str = str.trim();
-	if (str[0] === '[') str = str.slice(1);
-	if (str[str.length - 1] === ']') str = str.slice(0,-1);
+	if (str[0] === '[' && str[str.length - 1] === ']') str = str.slice(1,-1);
+
 
 	var result = [];
+
 	eachCSV(str, function(value) {
 		result.push(parseValue(value));
 	});
